@@ -10,14 +10,20 @@ public class DataTypes {
 		double c= 123.2342343;
 		char d = 'e';
 		boolean e=true;
-		
 		boolean f=false;
 		long l=12435336;
 		short s=32100;
 		byte b1 = 127;
 		
-		//Narrowing and widening
-		byte b2 = (byte) 130;
+		//Widening or up casting
+		byte b2 = 100;
+		int a2 = b2;
+		System.out.println("Smaller container value stored in a bigger container - " + a2 );
+		
+		//Narrowing or down casting
+		short s1 = 130;
+		byte b3 = (byte) s1; //Forcibly converting and storing short container value into byte container
+		System.out.println("Bigger container value stored in a smaller container - " + b3 );
 		
 		System.out.println("Byte value is : " + b2);
 		System.out.println("Integer value of a is : " + a); // Integer 
@@ -29,10 +35,16 @@ public class DataTypes {
 		System.out.println("Short value of s is : " + s); // Short
 		System.out.println(a + " " + b + " " +c); // Print all
 		
-		String sText = "hello world";
-
+		String sText = "hello world";  //String
+		System.out.println("String value is : " + sText);
 		
-		
+		//Array
+		int[] Marks = {10,20,40,80,60};
+		String[] strNames = {"amit","bikram","usha","swetha","sirisha","mounika","priyanka"};
+		System.out.println("First element of Marks array is : " + Marks[0]);
+		System.out.println("Second element of Names array is : " + strNames[1]);
+		System.out.println(Marks[0]+ " " + Marks[1]+ " " + Marks[2]); // + is used for concatenation or combining
+		System.out.println(strNames[0]+ " " + strNames[1]+ " " + strNames[2]);
 		
 	}
 
