@@ -25,7 +25,7 @@ public class MethodOverloadTest {
 	
 	public static void main(String[] args) {
 		MethodOverloadTest mt = new MethodOverloadTest(); // Create object for a class, object name is am
-		mt.Addition(10,20);
+		mt.Addition(12.4564, 456.567567);
 	
 	}
 
