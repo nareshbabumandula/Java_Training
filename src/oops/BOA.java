@@ -11,8 +11,6 @@ public class BOA implements FederalReserve, RBI{
 	public static void main(String[] args) {
 		BOA bo = new BOA();
 		bo.NoOfCustomers();
-	
-
 	}
 
 	@Override
