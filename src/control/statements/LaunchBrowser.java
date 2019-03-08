@@ -9,22 +9,23 @@ public class LaunchBrowser {
 	
 	public WebDriver driver;
 
-	
+	String strRootPath = System.getProperty("user.dir");
+
 	public void launchBrowserExample(String BROWSER)
 	{
 		switch (BROWSER) {
 		case "ie":
-			System.setProperty("webdriver.ie.driver", "C:\\Users\\NareshBabu\\Documents\\GitHub\\Java_Training\\browsers\\IEDriverServer.exe");
+			System.setProperty("webdriver.ie.driver", strRootPath + "\\browsers\\IEDriverServer.exe");
 			driver = new InternetExplorerDriver(); // Launch browser
 			driver.get("http://newtours.demoaut.com"); // Access Site
 			break;
 		case "chrome":
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\NareshBabu\\Documents\\GitHub\\Java_Training\\browsers\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", strRootPath + "\\browsers\\chromedriver.exe");
 			driver = new ChromeDriver();
 			driver.get("http://newtours.demoaut.com");
 			break;
 		case "ff":
-			System.setProperty("webdriver.gecko.driver", "C:\\Users\\NareshBabu\\Documents\\GitHub\\Java_Training\\browsers\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", strRootPath + "\\browsers\\geckodriver.exe");
 			driver = new FirefoxDriver();
 			driver.get("http://newtours.demoaut.com");
 			break;

@@ -1,5 +1,6 @@
 package oops;
 
-public interface RBI {
+public interface RBI{
 
+	
 }

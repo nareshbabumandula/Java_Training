@@ -1,6 +1,6 @@
 package oops;
 
-public class ClassB extends ClassA{
+public class ClassB extends ClassA {
 	
 	public void AddToCart()
 	{

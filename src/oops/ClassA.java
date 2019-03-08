@@ -1,6 +1,6 @@
 package oops;
 
-public class ClassA {
+public class ClassA{
 	
 	String USERNAME = "admin" ;
 	String PASSWORD ="secure123";
@@ -29,5 +29,7 @@ public class ClassA {
 		c.SearchProduct();*/
 
 	}
+
+
 
 }
