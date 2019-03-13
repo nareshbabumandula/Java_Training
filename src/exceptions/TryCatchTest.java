@@ -10,7 +10,7 @@ public class TryCatchTest {
 	public WebDriver driver;
 
 	String strRootPath = System.getProperty("user.dir");
-	boolean bFlag=false;
+	
 
 	/**
 	 * @Description This method is used to launch the browser
@@ -21,6 +21,7 @@ public class TryCatchTest {
 	 */
 	public void launchBrowserTest(String BROWSER)
 	{
+		boolean bFlag=false;
 		try {
 			switch (BROWSER) {
 			case "ie":

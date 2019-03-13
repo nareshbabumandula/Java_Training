@@ -10,7 +10,7 @@ public class CheckedException {
 	{
 		boolean bFlag =false;
 		try {
-			FileInputStream strFile = new FileInputStream("C:\\Users\\NareshBabu\\Desktop\\Test123.txt");
+			FileInputStream strFile = new FileInputStream("C:\\Users\\NareshBabu\\Desktop\\Test.txt");
 			int r;
 			while((r=strFile.read())!=-1)
 			{
@@ -31,7 +31,7 @@ public class CheckedException {
 		}
 	}
 	
-	public void CheckedException_Test() throws FileNotFoundException
+	public void CheckedException_Test() throws FileNotFoundException 
 	{
 		FileInputStream strFile = new FileInputStream("C:\\Users\\NareshBabu\\Desktop\\Selenium_Notes1234.txt");
 	}

@@ -9,8 +9,8 @@ public class UnCheckedException {
 		int z = x/y;
 		System.out.println("The value of z is:"+z);
 	}
-	
-	
+
+
 	public void Array_Test()
 	{
 		try {
@@ -21,21 +21,43 @@ public class UnCheckedException {
 			System.out.println(marks[2]);
 			System.out.println(marks[3]);
 			System.out.println(marks[4]);
-			//System.out.println(marks[5]);
-			int x = 1000/0;
-		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println(marks[-1]); // accessing an element beyond the size of an array
+		}
+		catch (ArithmeticException e) {
+			System.out.println("This is arithmatic exception...");
+		}
+
+		catch (NullPointerException e) {
+			System.out.println("This is NullPointer exception...");
+		}
+
+		/*catch (ArrayIndexOutOfBoundsException e) {
 			System.out.println("Array index is not found");
+			e.printStackTrace();
+		}*/
+		catch (Exception e) {
+			System.out.println("This is Exception...");
+			e.printStackTrace();
+		}
+		
+	}
+
+	
+	public void Test() {
+		int arrSize = -8;
+		try {
+		    int[] myArray = new int[arrSize];
+		} catch (NegativeArraySizeException ex) {
+		    System.out.println("Can't create array of negative size");
+		    ex.printStackTrace();
 		}
 	}
-		
-		
-	
-	
+
 	public static void main(String[] args) {
 		UnCheckedException uc = new UnCheckedException();
-		uc.Arithmatic();
+		//uc.Arithmatic();
 		//uc.Array_Test();
-
+		uc.Test();
 	}
 
 }
