@@ -2,6 +2,10 @@ package webdriver.scripts;
 
 
 import org.testng.annotations.Test;
+
+import object.repository.Homepage;
+import object.repository.Searchpage;
+
 import org.testng.annotations.BeforeClass;
 
 import java.util.Iterator;
@@ -14,7 +18,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 
-public class CheckboxTest {
+public class CheckboxTest  extends Homepage{
 
 	WebDriver driver;
 
@@ -38,7 +42,6 @@ public class CheckboxTest {
 			// Select the check box
 			chkFamilyandFriends.click();
 			System.out.println("Checkbox selection status after selecting is : " + chkFamilyandFriends.isSelected());
-			
 			List<WebElement> noofCheckboxes = driver.findElements(By.xpath("//input[@type='checkbox']"));
 			System.out.println("No of checkboxes displayed are : " + noofCheckboxes.size());
 			

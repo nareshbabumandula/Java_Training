@@ -1,22 +1,25 @@
-package webdriver.scripts;
+package pom;
 
 
 import org.testng.annotations.Test;
-
 import object.repository.Homepage;
+import object.repository.Searchpage;
 
 import org.testng.annotations.BeforeClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterClass;
 
-public class ButtonTest extends Homepage{
+public class TC01 extends Homepage{
 
 	WebDriver driver;
 
 	String strRootPath = System.getProperty("user.dir");
+	
+	Searchpage sp = new Searchpage();
 
 	@Test
 	public void ButtonMethods() {
@@ -24,18 +27,12 @@ public class ButtonTest extends Homepage{
 		try {
 			driver.get("https://www.amazon.com/"); //Access website
 			driver.manage().window().maximize();  // Maximize the browser window
-			WebElement btnSEARCH = driver.findElement(By.className("nav-input"));
-			System.out.println("Display status is : " + btnSEARCH.isDisplayed());
-			System.out.println("Enable status is : " + btnSEARCH.isEnabled());
-			System.out.println("Type attribute value is : " + btnSEARCH.getAttribute("type"));
-			System.out.println("Value attribute value is : " + btnSEARCH.getAttribute("value"));
-			System.out.println("Tab Index attribute value is : " + btnSEARCH.getAttribute("tabindex"));
-			System.out.println("Class attribute value is : " + btnSEARCH.getAttribute("class"));
-			System.out.println("Tagname is : " +  btnSEARCH.getTagName());
-			driver.findElement(By.id("twotabsearchtextbox")).sendKeys("umbrella");
-			Thread.sleep(2000);
-			//Click the search button
-			btnSEARCH.click();
+			driver.findElement(txtSearch).sendKeys("umbrella"); // WIth POM
+			driver.findElement(btnSEARCH).click(); // Page object model syntax
+			Thread.sleep(4000);
+			Searchpage page = PageFactory.initElements(driver,Searchpage.class);
+			page.verifyResultsCount();
+			//System.out.println(driver.findElement(By.xpath("//div[@class='sg-col-inner']/div/span")).getText());
 		} catch (Exception e) {
 			//e.printStackTrace();
 			System.out.println(e.getMessage());
